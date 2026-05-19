@@ -1,0 +1,9 @@
+{
+    "complierOptions": {
+        "moduleResolution": "node",
+        "target": "ESNext",
+        "jsx": "react-jsx",
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["src/**/*"]
+}
