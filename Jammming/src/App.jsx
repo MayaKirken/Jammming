@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import SearchBar from  './Components/SearchBar/SearchBar';
 import SearchResults from './Components/SearchResults/SearchResults';
@@ -10,13 +10,14 @@ function App() {
     { id: '2', name: 'Blue Monday', artist: 'New Order', album: 'Power, Corruption & Lies' },
     { id: '3', name: 'Let It Happen', artist: 'Tame Impala', album: 'Currents' }
   ]);
+  console.log("App current search results:", searchResults);
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
       <div className="App">
         <SearchBar />
         <div className="App-playlist">
-          <SearchResults />
+          <SearchResults searchResults={searchResults} />
           <Playlist />
         </div>
       </div>

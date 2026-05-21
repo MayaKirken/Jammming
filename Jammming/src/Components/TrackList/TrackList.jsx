@@ -2,15 +2,21 @@ import React from 'react';
 import './TrackList.css';
 import Track from '../Track/Track';
 
-function TrackList() {
-    return (
-        <div className="Tracklist">
+function TrackList(props) {
+    console.log("TrackList received tracks:", props.tracks);
+        return (
+            <div className="TrackList">
+                {props.tracks && props.tracks.map(track => {
+                    return (
+                        <Track 
+                            key={track.id}
+                            track={track}
+                        />
+                    );
+                })}
+            </div>
+        );
 
-            <Track />
-            <Track />
-            <Track />
-        </div>
-    );
 }
 
 export default TrackList;

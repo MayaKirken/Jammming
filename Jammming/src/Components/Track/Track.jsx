@@ -1,7 +1,7 @@
 import React from 'react';
 import './Track.css';
 
-function Track() {
+function Track(props) {
     const renderAction = () => {
         return <button className="Track-action">+</button>
     };
@@ -9,7 +9,7 @@ function Track() {
     return (
         <div className="Track">
             <div className="Track-information">
-                <h3>Song Name</h3>
+                <h3>{props.track.name}</h3>
                 <p>Artist Name | Album Name</p>
                 {renderAction()}
             </div>
