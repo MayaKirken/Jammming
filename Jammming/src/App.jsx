@@ -23,7 +23,7 @@ function App() {
         <SearchBar />
         <div className="App-playlist">
           <SearchResults searchResults={searchResults} />
-          <Playlist />
+          <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
         </div>
       </div>
     </div>
