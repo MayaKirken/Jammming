@@ -10,6 +10,11 @@ function App() {
     { id: '2', name: 'Blue Monday', artist: 'New Order', album: 'Power, Corruption & Lies' },
     { id: '3', name: 'Let It Happen', artist: 'Tame Impala', album: 'Currents' }
   ]);
+  const [playlistName, setPlaylistName] = useState('My Awesome Playlist');
+  const [playlistTracks, setPlaylistTracks] = useState([
+    { id: '4', name: 'Starlight', artist: 'Muse', album: 'Black Holes and Revelations' },
+    { id: '5', name: 'Leave the Door Open', artist: 'Silk Sonic', album: 'An Evening with Silk Sonic' }
+  ]);
   console.log("App current search results:", searchResults);
   return (
     <div>
