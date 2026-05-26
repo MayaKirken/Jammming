@@ -15,14 +15,20 @@ function App() {
     { id: '4', name: 'Starlight', artist: 'Muse', album: 'Black Holes and Revelations' },
     { id: '5', name: 'Leave the Door Open', artist: 'Silk Sonic', album: 'An Evening with Silk Sonic' }
   ]);
-  console.log("App current search results:", searchResults);
+  
+  const addTrack = (track) => {
+    if (playlistTracks.some((savedTrack) => savedTrack.id === track.id)) {
+      return;
+    }
+    setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+  };
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
       <div className="App">
         <SearchBar />
         <div className="App-playlist">
-          <SearchResults searchResults={searchResults} />
+          <SearchResults searchResults={searchResults} onAdd={addTrack} />
           <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
         </div>
       </div>
