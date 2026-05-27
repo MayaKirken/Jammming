@@ -27,6 +27,10 @@ function App() {
     setPlaylistTracks((prevTracks) => prevTracks.filter((savedTrack) => savedTrack.id !== track.id));
   };
 
+  const updatePlaylistName = (name) => {
+    setPlaylistName(name);
+  };
+
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
@@ -34,7 +38,7 @@ function App() {
         <SearchBar />
         <div className="App-playlist">
           <SearchResults searchResults={searchResults} onAdd={addTrack} />
-          <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} />
+          <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} />
         </div>
       </div>
     </div>
