@@ -6,9 +6,9 @@ import Playlist from './Components/Playlist/Playlist';
 
 function App() {
   const [searchResults, setSearchResults] = useState([
-    { id: '1', name: 'Tiny Dancer', artist: 'Elton John', album: 'Madman Across the Water' }, 
-    { id: '2', name: 'Blue Monday', artist: 'New Order', album: 'Power, Corruption & Lies' },
-    { id: '3', name: 'Let It Happen', artist: 'Tame Impala', album: 'Currents' }
+    { id: '1', name: 'Tiny Dancer', artist: 'Elton John', album: 'Madman Across the Water', uri: "spotify:track:5S47C20X1X1P" }, 
+    { id: '2', name: 'Blue Monday', artist: 'New Order', album: 'Power, Corruption & Lies', uri: "spotify:track:273K4X9X2X2P" },
+    { id: '3', name: 'Let It Happen', artist: 'Tame Impala', album: 'Currents', uri: "spotify:track:384L5Y0Y3Y3P" }
   ]);
   const [playlistName, setPlaylistName] = useState('My Awesome Playlist');
   const [playlistTracks, setPlaylistTracks] = useState([
@@ -31,6 +31,15 @@ function App() {
     setPlaylistName(name);
   };
 
+  const savePlaylist = () => {
+    const trackUris = playlistTracks.map((track) => track.uri);
+
+    console.log("Saving playlist to Spotify with URIs:", trackUris);
+
+    setPlaylistName("New Playlist");
+    setPlaylistTracks([]);
+  };
+
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
@@ -38,7 +47,7 @@ function App() {
         <SearchBar />
         <div className="App-playlist">
           <SearchResults searchResults={searchResults} onAdd={addTrack} />
-          <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} />
+          <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} onSave={savePlaylist} />
         </div>
       </div>
     </div>
