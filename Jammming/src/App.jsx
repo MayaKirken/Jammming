@@ -3,13 +3,10 @@ import './App.css';
 import SearchBar from  './Components/SearchBar/SearchBar';
 import SearchResults from './Components/SearchResults/SearchResults';
 import Playlist from './Components/Playlist/Playlist';
+import mockTracks from './mockData';
 
 function App() {
-  const [searchResults, setSearchResults] = useState([
-    { id: '1', name: 'Tiny Dancer', artist: 'Elton John', album: 'Madman Across the Water', uri: "spotify:track:5S47C20X1X1P" }, 
-    { id: '2', name: 'Blue Monday', artist: 'New Order', album: 'Power, Corruption & Lies', uri: "spotify:track:273K4X9X2X2P" },
-    { id: '3', name: 'Let It Happen', artist: 'Tame Impala', album: 'Currents', uri: "spotify:track:384L5Y0Y3Y3P" }
-  ]);
+  const [searchResults, setSearchResults] = useState(mockTracks);
   const [playlistName, setPlaylistName] = useState('My Awesome Playlist');
   const [playlistTracks, setPlaylistTracks] = useState([
     { id: '4', name: 'Starlight', artist: 'Muse', album: 'Black Holes and Revelations' },
@@ -39,6 +36,8 @@ function App() {
     setPlaylistName("New Playlist");
     setPlaylistTracks([]);
   };
+
+  
 
   return (
     <div>
