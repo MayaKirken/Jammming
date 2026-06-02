@@ -37,13 +37,18 @@ function App() {
     setPlaylistTracks([]);
   };
 
-  
+  const search = (searchTerm) => {
+    const filteredResults = mockTracks.filter(track => 
+      track.name.toLowerCase().includes(searchTerm.toLowerCase()) || track.artist.toLowerCase().includes(searchTerm.toLowerCase()) || track.album.toLowerCase().includes(searchTerm.toLowerCase()) 
+    );
+    setSearchResults(filteredResults);
+  }
 
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
       <div className="App">
-        <SearchBar />
+        <SearchBar onSearch={search} />
         <div className="App-playlist">
           <SearchResults searchResults={searchResults} onAdd={addTrack} />
           <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} onSave={savePlaylist} />
