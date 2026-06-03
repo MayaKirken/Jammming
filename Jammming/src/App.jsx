@@ -44,13 +44,15 @@ function App() {
     setSearchResults(filteredResults);
   }
 
+  const filteredResults = searchResults.filter((searchTrack) => !playlistTracks.some((playlistTrack) => playlistTrack.id === searchTrack.id));
+
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
       <div className="App">
         <SearchBar onSearch={search} />
         <div className="App-playlist">
-          <SearchResults searchResults={searchResults} onAdd={addTrack} />
+          <SearchResults searchResults={filteredResults} onAdd={addTrack} />
           <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} onNameChange={updatePlaylistName} onSave={savePlaylist} />
         </div>
       </div>
