@@ -1,16 +1,32 @@
-# React + Vite
+# Jammming 🎵
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, dynamic music playlist creator built with React and styled with modern CSS Flexbox. This application was developed as a core portfolio project to master component architecture, unidirectional data flow, and advanced local state management.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+[View Live Application on Netlify](https://jammming-portfolio.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Features
+* **Interactive Search:** Browse a curated collection of track data locally.
+* **Custom Playlist Builder:** Seamlessly add and remove tracks to a personalized playlist workspace.
+* **Smart Duplicate Prevention (Custom Extension):** Built an automated filtering system that instantly hides songs from the search results once they are added to the playlist, ensuring a clean, duplicate-free user workflow.
+* **Fully Responsive Layout:** Used custom Flexbox alignments and spacing to ensure a crisp, uncluttered user experience across modern devices.
 
-## React Compiler
+## 🛠️ Tech Stack & Architecture
+* **Front-End:** React 18+ (Functional Components, Hooks)
+* **Styling:** Vanilla CSS3 (Flexbox Layout Module)
+* **Environment:** Vite / Node.js
+* **Version Control:** Git & GitHub (with rigorous commit message guidelines)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📐 Technical Design & Mock Architecture
+Because this project is designed for localized portfolio review and testing environments, it utilizes a custom static data architecture (`mockData.js`) to rigorously test state and prop communication. 
 
-## Expanding the ESLint configuration
+Prior to implementing the duplicate filtering feature, a formal Technical Design Document was authored to analyze the computational efficiency of combining JavaScript `.filter()` with `.some()` during the React render phase, ensuring optimal front-end performance and maintaining a strict single source of truth.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Local Setup Instructions
+To run this project locally on your machine:
+
+Clone the repository: `git clone https://github.com/MayaKirken/Jammming.git`
+Navigate into the project directory: `cd jammming`
+Install dependencies: `npm install`
+Start the local development server: `npm run dev`
+Open your browser and navigate to the localhost port indicated in your terminal (typically `http://localhost:5173`).
